@@ -12,3 +12,17 @@ lastTime = startTime
 lapNum = 1
 
 #TODO Start tracking laptimes
+
+
+try: 
+	while True:
+		input()
+		lapTime = round(time.time() - lastTime, 2)
+		totalTime = round(time.time() - startTime, 2)
+		print('Lap #%s: %s (%s)' % (lapNum, totalTime, lapTime), end='')
+		lapNum += 1
+		lastTime = time.time() # resets the last laptime
+
+except KeyboardInterrupt:
+	#Handle the ctrl-c exception to keep its error message from displaying.
+	print('\nDone!') 
